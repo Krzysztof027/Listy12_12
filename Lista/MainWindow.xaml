@@ -1,0 +1,82 @@
+﻿<Window x:Class="Lista.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lista"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--Element TabControl zawiera strony kart, które są reprezentowane przez TabPage obiekty dodawane za pośrednictwem TabPages właściwości.-->
+        <!--TabStripPlacement-umieszczenie paska kart-->
+        <!--Border Tchickness-grubość granicy-->
+        <!--Border Brush (tł: pędzel graniczny), ale po prostu inaczej kolor-->
+        
+        <TabControl SelectedIndex="2" TabStripPlacement="Top" BorderThickness="5" BorderBrush="Black">
+            <TabItem>
+                <!--TabItem-element zakładki-->
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <!--Rectangle-prostokąt-->
+                        <!--fill-wypełnienie-->
+                        <Rectangle Height="20" Width="20" Fill="#4E1515"/>
+                        <!-- /> - to inaczej jak (<> </>) -->
+                        <Label>Content Control</Label>
+                        <!--label-etykieta-->
+                    </StackPanel>
+                </TabItem.Header>
+                <ItemsControl>
+                    <Label>Zwierzeta:</Label>
+                    <Label>Rogowate</Label>
+                    <Label>Kotowate</Label>
+                    <Label>Gady</Label>
+                    <Button>Sprawdź</Button>
+                    <Button>Usuń :c</Button>
+                    <Button>Zapisz :3</Button>
+                    <Button>>^^</Button>
+                </ItemsControl>
+            </TabItem>
+            <TabItem Header="ItemsControl">
+                <!--Inny sposób-->
+                <!--source-źrodło-->
+                <ItemsControl ItemsSource="{Binding Slowa}">
+                    
+                </ItemsControl>
+            </TabItem>
+            <TabItem Header="ListBox">
+                <!-- Można zaznaczyć 1 element -->
+                <ListView ItemsSource="{Binding WszystkiePizze}">
+                    <!-- <ListView.ItemTemplate>          
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Nazwa}"/>
+                                <Label Content="{Binding Cena}"/>
+                                <Label Content="{Binding Skladniki}"/>
+    
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>-->
+                    <!-- template-Szablon elementu-->
+                    <!--Data Template-Szablon danych-->
+                    <!--Content-zawartość-->
+                    <!--Binding-wiazacy-->
+                    <ListView.View>
+                        <!--List View - widok listy-->
+                        <GridView>
+                            <!--GridView-widok siatki-->
+                            <GridViewColumn DisplayMemberBinding="{Binding Nazwa}" Header="Nazwa pizzy: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Cena}" Header="Cena: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Skladniki}" Header="Skladniki "></GridViewColumn>
+                            <!--ListViewColumn-kolumna widoku listy-->
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="DataGrid">
+                <DataGrid ItemsSource="{Binding WszystkiePizze}">
+                    
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
