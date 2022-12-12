@@ -45,29 +45,46 @@
             </TabItem>
             <TabItem Header="ListBox">
                 <!-- Można zaznaczyć 1 element -->
-                <ListView ItemsSource="{Binding WszystkiePizze}">
-                    <!-- <ListView.ItemTemplate>          
+                <ListBox ItemsSource="{Binding WszystkiePizze}">
+                    <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Nazwa}"/>
-                                <Label Content="{Binding Cena}"/>
-                                <Label Content="{Binding Skladniki}"/>
-    
+                                <Label Content="{Binding cena}"/>
+                                <Label Content="{Binding skladniki}"/>
                             </StackPanel>
                         </DataTemplate>
-                    </ListView.ItemTemplate>-->
-                    <!-- template-Szablon elementu-->
+                    </ListBox.ItemTemplate>
+                    </ListBox>
+            </TabItem>
+            <!--GridView-widok siatki-->
+            <!--ListViewColumn-kolumna widoku listy-->
+            <!-- template-Szablon elementu-->
                     <!--Data Template-Szablon danych-->
                     <!--Content-zawartość-->
                     <!--Binding-wiazacy-->
+                
+            <!--List View - widok listy-->
+                   
+
+            <TabItem Header="ListView">
+                <!-- Można zaznaczyć kilka elementów -->
+                <ListView ItemsSource="{Binding WszystkiePizze}">
+                   <ListView.ItemTemplate> 
+                         <DataTemplate> 
+                             <StackPanel Orientation="Horizontal"> 
+                                 <Label Content="{Binding nazwa}"/> 
+                                 <Label Content="{Binding nena}"/> 
+                                 <Label Content="{Binding skladniki}"/> 
+                             </StackPanel> 
+                         </DataTemplate> 
+                     </ListView.ItemTemplate>
+
                     <ListView.View>
-                        <!--List View - widok listy-->
                         <GridView>
-                            <!--GridView-widok siatki-->
-                            <GridViewColumn DisplayMemberBinding="{Binding Nazwa}" Header="Nazwa pizzy: "></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Cena}" Header="Cena: "></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Skladniki}" Header="Skladniki "></GridViewColumn>
-                            <!--ListViewColumn-kolumna widoku listy-->
+                            <GridViewColumn DisplayMemberBinding="{Binding nazwa}" Header="Nazwa pizzy: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding cena}" Header="Cena: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding skladniki}" Header="Składniki: "></GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
