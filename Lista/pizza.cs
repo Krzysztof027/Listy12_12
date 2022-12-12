@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lista
 {
-    class pizza
+    public class pizza
     {
+        
     }
 }

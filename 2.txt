@@ -1,0 +1,24 @@
+using System; 
+ using System.Collections.Generic; 
+ using System.Linq; 
+ using System.Text; 
+ using System.Threading.Tasks; 
+  
+ namespace Lista 
+ { 
+     public class Pizza 
+     { 
+         public string Nazwa { get; set; } 
+         public int Cena { get; set; } 
+         public string Skladniki { get; set; } 
+         public bool czyCienka { get; set; } 
+  
+         public Pizza(string nazwa, int cena, string skladniki, bool czyCienka)//Konstruktor (leć na lewo w linijce i śrubokręt GENERUJ KONSTRUKTOR) 
+         { 
+             Nazwa = nazwa; 
+             Cena = cena; 
+             Skladniki = skladniki; 
+             this.czyCienka = czyCienka; 
+         } 
+     } 
+ }

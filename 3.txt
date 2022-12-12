@@ -1,0 +1,76 @@
+<Window x:Class="Lista.MainWindow" 
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:local="clr-namespace:Lista" 
+         mc:Ignorable="d" 
+         Title="Lista" Height="450" Width="800"> 
+     <Grid> 
+         <TabControl SelectedIndex="2" TabStripPlacement="Top" BorderThickness="5" BorderBrush="Black"> 
+             <TabItem> 
+                 <TabItem.Header> 
+                     <StackPanel Orientation="Horizontal"> 
+                         <Rectangle Height="20" Width="20" Fill="#4E1515"/> 
+                         <Label>Content Control</Label> 
+                     </StackPanel> 
+                 </TabItem.Header> 
+                 <ItemsControl> 
+                     <Label>Zwierzeta: </Label> 
+                     <Label>Rogowate</Label> 
+                     <Label>Kotowate</Label> 
+                     <Label>Gady</Label> 
+                     <Button>Sprawdź</Button> 
+                     <Button>Usuń :c</Button> 
+                     <Button>Zapisz :D</Button> 
+                     <Button>>:)</Button> 
+                 </ItemsControl> 
+             </TabItem> 
+             <TabItem Header="ItemsControl"> <!--Inny sposób--> 
+                 <ItemsControl ItemsSource="{Binding Slowa}"></ItemsControl> 
+             </TabItem> 
+  
+             <TabItem Header="ListBox"><!-- Można zaznaczyć jeden element --> 
+                 <ListBox ItemsSource="{Binding WszystkiePizze}"> 
+                     <ListBox.ItemTemplate> 
+                         <DataTemplate> 
+                             <StackPanel Orientation="Horizontal"> 
+                                 <Label Content="{Binding Nazwa}"/> 
+                                 <Label Content="{Binding Cena}"/> 
+                                 <Label Content="{Binding Skladniki}"/> 
+                             </StackPanel> 
+                         </DataTemplate> 
+                     </ListBox.ItemTemplate> 
+                 </ListBox> 
+             </TabItem> 
+              
+             <TabItem Header="ListView"><!-- Można zaznaczyć kilka elementów --> 
+                 <ListView ItemsSource="{Binding WszystkiePizze}"> 
+                     <!--<ListView.ItemTemplate> 
+                         <DataTemplate> 
+                             <StackPanel Orientation="Horizontal"> 
+                                 <Label Content="{Binding Nazwa}"/> 
+                                 <Label Content="{Binding Cena}"/> 
+                                 <Label Content="{Binding Skladniki}"/> 
+                             </StackPanel> 
+                         </DataTemplate> 
+                     </ListView.ItemTemplate>--> 
+  
+                     <ListView.View> 
+                         <GridView> 
+                             <GridViewColumn DisplayMemberBinding="{Binding Nazwa}" Header="Nazwa pizzy: "></GridViewColumn> 
+                             <GridViewColumn DisplayMemberBinding="{Binding Cena}" Header="Cena: "></GridViewColumn> 
+                             <GridViewColumn DisplayMemberBinding="{Binding Skladniki}" Header="Składniki: "></GridViewColumn> 
+                         </GridView> 
+                     </ListView.View> 
+                 </ListView> 
+             </TabItem> 
+              
+             <TabItem Header="DataGrid"> 
+                 <DataGrid ItemsSource="{Binding WszystkiePizze}"> 
+                      
+                 </DataGrid> 
+             </TabItem> 
+         </TabControl> 
+     </Grid> 
+ </Window>
