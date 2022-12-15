@@ -22,3 +22,5 @@ using System;
          } 
      } 
  }
+
+CZYTAJ KOMUNIKATY

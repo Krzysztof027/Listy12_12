@@ -28,7 +28,8 @@ using System;
              InitializeComponent(); 
   
              Slowa = new List<string>(); 
-             Slowa = "Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale".Split(' ').ToList();//Wrzucanie do listy 
+             Slowa = "Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale Ala ma kota, a kot ma Ale Ala ma kota,
+a kot ma Ale"WW//Wrzucanie do listy 
              DataContext = this;//Inne Bindowanie 
   
              przygotujDane(); 

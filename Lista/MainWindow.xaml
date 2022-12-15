@@ -43,15 +43,17 @@
                     
                 </ItemsControl>
             </TabItem>
+            
             <TabItem Header="ListBox">
                 <!-- Można zaznaczyć 1 element -->
                 <ListBox ItemsSource="{Binding WszystkiePizze}">
+                    <!--Wszystkiepizze bierzemy z MainWindows.xaml z miejsca gdzie tworzymy nowe pizze-->
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Nazwa}"/>
-                                <Label Content="{Binding cena}"/>
-                                <Label Content="{Binding skladniki}"/>
+                                <Label Content="{Binding Cena}"/>
+                                <Label Content="{Binding Skladniki}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -70,21 +72,21 @@
             <TabItem Header="ListView">
                 <!-- Można zaznaczyć kilka elementów -->
                 <ListView ItemsSource="{Binding WszystkiePizze}">
-                   <ListView.ItemTemplate> 
+                    <!--<ListView.ItemTemplate> 
                          <DataTemplate> 
                              <StackPanel Orientation="Horizontal"> 
-                                 <Label Content="{Binding nazwa}"/> 
-                                 <Label Content="{Binding nena}"/> 
-                                 <Label Content="{Binding skladniki}"/> 
+                                 <Label Content="{Binding Nazwa}"/> 
+                                 <Label Content="{Binding Cena}"/> 
+                                 <Label Content="{Binding Skladniki}"/> 
                              </StackPanel> 
                          </DataTemplate> 
-                     </ListView.ItemTemplate>
+                     </ListView.ItemTemplate>-->
 
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding nazwa}" Header="Nazwa pizzy: "></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding cena}" Header="Cena: "></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding skladniki}" Header="Składniki: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Nazwa}" Header="Nazwa pizzy: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Cena}" Header="Cena: "></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Skladniki}" Header="Składniki: "></GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
